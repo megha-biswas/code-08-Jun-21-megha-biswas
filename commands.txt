@@ -1,0 +1,46 @@
+python -m venv venv
+pip install -r requirements.txt
+
+cd src
+python app.py
+
+curl --location --request POST 'http://127.0.0.1:3000/calculateBmi' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: csrftoken=utjkZNmqsg9UGT1MQSQXzD8o21FWwG82e8AMdIV0MNBdf8bHYu5kRxk41v4emkW2' \
+--data-raw '[
+    {
+        "Gender": "Male",
+        "HeightCm": 171,
+        "WeightKg": 96
+    },
+    {
+        "Gender": "Male",
+        "HeightCm": 161,
+        "WeightKg": 85
+    },
+    {
+        "Gender": "Male",
+        "HeightCm": 180,
+        "WeightKg": 77
+    },
+    {
+        "Gender": "Female",
+        "HeightCm": 166,
+        "WeightKg": 62
+    },
+    {
+        "Gender": "Female",
+        "HeightCm": 150,
+        "WeightKg": 70
+    },
+    {
+        "Gender": "Female",
+        "HeightCm": 167,
+        "WeightKg": 82
+    },
+    {
+        "Gender": "Female",
+        "HeightCm": 175,
+        "WeightKg": 75
+    }
+]'
